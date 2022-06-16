@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             var num1 =etFirstNumber.text.toString().toDouble()
             var num2 =etLastNumber.text.toString().toDouble()
             modulus(num1,num2)
+//            validateInputs()
         }
         btnDivide.setOnClickListener {
             var num1=etFirstNumber.text.toString().toDouble()
@@ -65,9 +66,34 @@ class MainActivity : AppCompatActivity() {
             division(num1,num2)
         }
 
-//        validateInputs()
+       // validateInputs()
+        listenOperations()
 
     }
+    fun listenOperations(){
+    btnAdd.setOnClickListener {
+        var num1 =etFirstNumber.text.toString().toDouble()
+        var num2 =etLastNumber.text.toString().toDouble()
+        add(num1,num2)
+    }
+    btnSubtract.setOnClickListener {
+        var num1 =etFirstNumber.text.toString().toDouble()
+        var num2 =etLastNumber.text.toString().toDouble()
+        subtract(num1, num2)
+    }
+    btnMod.setOnClickListener {
+        var num1 =etFirstNumber.text.toString().toDouble()
+        var num2 =etLastNumber.text.toString().toDouble()
+        modulus(num1,num2)
+//            validateInputs()
+    }
+    btnDivide.setOnClickListener {
+        var num1=etFirstNumber.text.toString().toDouble()
+        var num2=etLastNumber.text.toString().toDouble()
+        division(num1,num2)
+    }
+    }
+
     fun modulus(num1: Double, num2: Double) {
         var mod =num1%num2
         tvDisplay.text=mod.toString()
